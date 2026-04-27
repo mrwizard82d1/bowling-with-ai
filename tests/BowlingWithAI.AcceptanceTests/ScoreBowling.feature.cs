@@ -106,7 +106,7 @@ namespace BowlingWithAI.AcceptanceTests
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("ScoreBowling.feature.ndjson", 3);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("ScoreBowling.feature.ndjson", 4);
         }
         
         async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
@@ -163,6 +163,73 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
 #line 9
   await testRunner.ThenAsync("I see a score of 0 for this game", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Xunit.SkippableFactAttribute(DisplayName="Score a game of all open frames")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "Score a bowling game")]
+        [global::Xunit.TraitAttribute("Description", "Score a game of all open frames")]
+        public async global::System.Threading.Tasks.Task ScoreAGameOfAllOpenFrames()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "1";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Score a game of all open frames", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 11
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
+                            "Roll1",
+                            "Roll2"});
+                table1.AddRow(new string[] {
+                            "1",
+                            "7"});
+                table1.AddRow(new string[] {
+                            "6",
+                            "1"});
+                table1.AddRow(new string[] {
+                            "1",
+                            "0"});
+                table1.AddRow(new string[] {
+                            "3",
+                            "0"});
+                table1.AddRow(new string[] {
+                            "4",
+                            "5"});
+                table1.AddRow(new string[] {
+                            "6",
+                            "0"});
+                table1.AddRow(new string[] {
+                            "5",
+                            "3"});
+                table1.AddRow(new string[] {
+                            "3",
+                            "2"});
+                table1.AddRow(new string[] {
+                            "8",
+                            "0"});
+                table1.AddRow(new string[] {
+                            "3",
+                            "4"});
+#line 12
+  await testRunner.GivenAsync("I have completed the game", ((string)(null)), table1, "Given ");
+#line hidden
+#line 24
+  await testRunner.WhenAsync("I calculate the score for this game", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 25
+  await testRunner.ThenAsync("I see a score of 62 for this game", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

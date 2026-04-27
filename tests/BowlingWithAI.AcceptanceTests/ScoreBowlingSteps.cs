@@ -20,6 +20,16 @@ public class ScoreBowlingSteps
         }
     }
 
+    [Given("I have completed the game")]
+    public void GivenIHaveCompletedTheGame(DataTable rolls)
+    {
+        foreach (var row in rolls.Rows)
+        {
+            _game.Roll(int.Parse(row["Roll1"]));
+            _game.Roll(int.Parse(row["Roll2"]));
+        }
+    }
+
     [When("I calculate the score for this game")]
     public void WhenICalculateTheScoreForThisGame()
     {
