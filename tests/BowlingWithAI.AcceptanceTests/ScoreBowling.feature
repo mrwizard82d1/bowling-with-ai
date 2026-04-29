@@ -39,3 +39,19 @@ Scenario: Score a game of both open frames and spares
   |     2 |     4 |
   When I calculate the score for this game
   Then I see a score of 80 for this game
+
+Scenario: Score a game of strikes, spares, and open frames
+  Given I have completed the game
+  | Roll1 | Roll2 |
+  |     6 |     0 |
+  |     5 |     2 |
+  |    10 |       |
+  |     3 |     7 |
+  |     9 |     0 |
+  |     6 |     4 |
+  |    10 |       |
+  |     7 |     3 |
+  |     3 |     4 |
+  |     1 |     5 |
+  When I calculate the score for this game
+  Then I see a score of 127 for this game
