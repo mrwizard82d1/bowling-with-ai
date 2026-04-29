@@ -17,12 +17,21 @@ public class Game
 
         for (int frame = 0; frame < 10; frame++)
         {
-            if (_rolls[roll] + _rolls[roll + 1] == 10)
+            if (_rolls[roll] == 10)
+            {
+                score += 10 + _rolls[roll + 1] + _rolls[roll + 2];
+                roll += 1;
+            }
+            else if (_rolls[roll] + _rolls[roll + 1] == 10)
+            {
                 score += 10 + _rolls[roll + 2];
+                roll += 2;
+            }
             else
+            {
                 score += _rolls[roll] + _rolls[roll + 1];
-
-            roll += 2;
+                roll += 2;
+            }
         }
 
         return score;

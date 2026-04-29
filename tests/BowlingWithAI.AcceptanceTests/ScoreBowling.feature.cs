@@ -106,7 +106,7 @@ namespace BowlingWithAI.AcceptanceTests
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("ScoreBowling.feature.ndjson", 5);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("ScoreBowling.feature.ndjson", 6);
         }
         
         async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
@@ -189,41 +189,41 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
                             "Roll1",
                             "Roll2"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "1",
                             "7"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "6",
                             "1"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "1",
                             "0"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "3",
                             "0"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "4",
                             "5"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "6",
                             "0"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "5",
                             "3"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "3",
                             "2"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "8",
                             "0"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "3",
                             "4"});
 #line 12
-  await testRunner.GivenAsync("I have completed the game", ((string)(null)), table2, "Given ");
+  await testRunner.GivenAsync("I have completed the game", ((string)(null)), table1, "Given ");
 #line hidden
 #line 24
   await testRunner.WhenAsync("I calculate the score for this game", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -256,47 +256,114 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
                             "Roll1",
                             "Roll2"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "3",
                             "0"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "8",
                             "1"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "8",
                             "2"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "0",
                             "10"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "6",
                             "0"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "7",
                             "0"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "8",
                             "2"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "2",
                             "0"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "9",
                             "0"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "2",
                             "4"});
 #line 28
-  await testRunner.GivenAsync("I have completed the game", ((string)(null)), table3, "Given ");
+  await testRunner.GivenAsync("I have completed the game", ((string)(null)), table2, "Given ");
 #line hidden
 #line 40
   await testRunner.WhenAsync("I calculate the score for this game", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 41
   await testRunner.ThenAsync("I see a score of 80 for this game", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Xunit.SkippableFactAttribute(DisplayName="Score a game of strikes, spares, and open frames")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "Score a bowling game")]
+        [global::Xunit.TraitAttribute("Description", "Score a game of strikes, spares, and open frames")]
+        public async global::System.Threading.Tasks.Task ScoreAGameOfStrikesSparesAndOpenFrames()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "3";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Score a game of strikes, spares, and open frames", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 43
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+                global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
+                            "Roll1",
+                            "Roll2"});
+                table3.AddRow(new string[] {
+                            "6",
+                            "0"});
+                table3.AddRow(new string[] {
+                            "5",
+                            "2"});
+                table3.AddRow(new string[] {
+                            "10",
+                            ""});
+                table3.AddRow(new string[] {
+                            "3",
+                            "7"});
+                table3.AddRow(new string[] {
+                            "9",
+                            "0"});
+                table3.AddRow(new string[] {
+                            "6",
+                            "4"});
+                table3.AddRow(new string[] {
+                            "10",
+                            ""});
+                table3.AddRow(new string[] {
+                            "7",
+                            "3"});
+                table3.AddRow(new string[] {
+                            "3",
+                            "4"});
+                table3.AddRow(new string[] {
+                            "1",
+                            "5"});
+#line 44
+  await testRunner.GivenAsync("I have completed the game", ((string)(null)), table3, "Given ");
+#line hidden
+#line 56
+  await testRunner.WhenAsync("I calculate the score for this game", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 57
+  await testRunner.ThenAsync("I see a score of 127 for this game", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

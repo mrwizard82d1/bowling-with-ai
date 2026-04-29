@@ -26,7 +26,8 @@ public class ScoreBowlingSteps
         foreach (var row in rolls.Rows)
         {
             _game.Roll(int.Parse(row["Roll1"]));
-            _game.Roll(int.Parse(row["Roll2"]));
+            if (!string.IsNullOrWhiteSpace(row["Roll2"]))
+                _game.Roll(int.Parse(row["Roll2"]));
         }
     }
 

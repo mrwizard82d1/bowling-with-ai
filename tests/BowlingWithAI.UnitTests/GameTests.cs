@@ -16,6 +16,20 @@ public class GameTests
     }
 
     [Fact]
+    public void Strike_AddsNextTwoRollsAsBonus()
+    {
+        var game = new Game();
+
+        game.Roll(10); // strike
+        game.Roll(3);
+        game.Roll(4);
+        for (int i = 0; i < 16; i++)
+            game.Roll(0);
+
+        Assert.Equal(24, game.Score());
+    }
+
+    [Fact]
     public void Spare_AddsNextRollAsBonus()
     {
         var game = new Game();
